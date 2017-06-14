@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app="deviceShowcase">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Devices showcase</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<md-toolbar class="top-bar">
+    <h1 class="md-display-2">Device Showcase</h1>
+</md-toolbar>
+<md-content ng-controller="ShowcaseController">
+    <md-radio-group>
+
+        <md-radio-button ng-repeat="showcaseMode in showcaseModes" value="{{showcaseMode.value}}" class="md-primary" >{{showcaseMode.label}}</md-radio-button>
+
+    </md-radio-group>
+</md-content>
+
+<script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/angular-animate/angular-animate.js"></script>
+<script src="../node_modules/angular-aria/angular-aria.js"></script>
+<script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
+
+<script src="app/app.module.js"></script>
+</body>
+</html>

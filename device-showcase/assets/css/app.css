@@ -1,0 +1,63 @@
+/******************
+* Components
+*******************/
+
+/******************
+* Table
+*******************/
+table {
+    border-collapse: collapse;
+    margin: .75em 0;
+    table-layout: fixed;
+    width: 100%
+}
+
+th {
+    border-bottom: 1px solid #b7b7b7;
+    font-weight: bold;
+    padding: .75em 0;
+    text-align: left
+}
+
+td {
+    border-bottom: 1px solid #DDD;
+    padding: .75em 0
+}
+
+tr,td,th {
+    vertical-align: middle
+}
+
+
+
+/******************
+* Top bar
+*******************/
+.top-bar {
+    padding: 2rem;
+}
+    .top-bar h1 {
+        margin: 0;
+    }
+
+
+/******************
+* Content
+*******************/
+md-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/******************
+* Purchases filter
+*******************/
+form.purchases-adding {
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+    form.purchases-adding .purchases-adding__filter-container .purchases-adding__add-item{
+        margin-top: 14px;
+        width: 100%;
+        text-align: center;
+    }

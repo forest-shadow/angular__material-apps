@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <title>Purchases App</title>
+</head>
+<body ng-app="purchasesApp">
+    <md-toolbar class="top-bar">
+        <h1 class="nd-display-2">Purchases App</h1>
+    </md-toolbar>
+
+    <md-content ng-controller="PurchasesListController">
+        <form id="purchases-adding" name="purchasesAdding" class="purchases-adding" flex layout="row">
+            <md-input-container class="purchases-adding__filter-container" flex="33">
+                <input type="text" name="item-name" placeholder="Item name"
+                       ng-model="itemName" required>
+                <div ng-messages="itemName.$error">
+                    <div ng-message="required">Item name field required</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="purchases-adding__filter-container" flex="33">
+                <input type="number" name="item-price" placeholder="Price"
+                        ng-model="itemPrice" required>
+                <div ng-messages="itemPrice.$error">
+                    <div ng-message="required">Item price field required</div>
+                </div>
+            </md-input-container>
+            <div class="purchases-adding__filter-container" flex="33">
+                <md-button class="purchases-adding__add-item md-raised"
+                            ng-click="addItem(itemName,itemPrice)">Add purchase</md-button>
+            </div>
+        </form>
+
+        <table>
+            <tr>
+                <th>Item name</th>
+                <th>Price</th>
+                <th>Already bought</th>
+            </tr>
+            <tr ng-repeat="item in list.items">
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td><md-checkbox ng-model="item.done" aria-label="checkbox-bought"></md-checkbox></td>
+            </tr>
+        </table>
+    </md-content>
+
+<script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/angular-animate/angular-animate.js"></script>
+<script src="../node_modules/angular-aria/angular-aria.js"></script>
+<script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
+
+<script src="app/app.module.js"></script>
+</body>
+</html>

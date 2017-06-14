@@ -1,0 +1,62 @@
+h1 {
+    margin: 0;
+}
+
+/******************
+* Top Bar
+******************/
+.top-bar {
+    min-height: 88px;
+}
+
+/******************
+* Sidenav
+******************/
+.app-sidenav {
+    background: #ecf0f1;
+}
+.app-sidenav .avatar {
+    margin-right: 14px;
+}
+
+md-list-item > button {
+    width:100%;
+    text-align:left !important;
+}
+.avatar {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+    vertical-align: middle;
+}
+
+/******************
+* Content
+******************/
+.app-content {
+    overflow: hidden;
+    background: #bdc3c7;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+}
+
+.app-content .md-button.share {
+    background-color: transparent;
+    border: none;
+    width: 48px;
+    height: 48px;
+    margin: 8px auto 16px 0;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+.app-content__bottom-user-sheet span.name{
+    font-weight: bold;
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Angular Material Test App</title>
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="assets/index.css">
+</head>
+<body ng-app="MyAngularApp"
+      ng-controller="UserController as UserController"
+      layout="column"
+>
+
+<md-toolbar class="top-bar" layout="row" layout-align="center" layout-padding>
+    <md-button class="md-fab md-button md-ink-ripple"
+               ng-click="UserController.toggleList()" aria-label="SideNav"
+               hide-gt-sm>
+        <md-icon md-svg-src="hamburger"></md-icon>
+    </md-button>
+
+    <h1>My test App</h1>
+</md-toolbar>
+
+<div class="app-container" layout="row"
+    flex>
+    <md-sidenav md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-sm')"
+                flex
+                class="md-sidenav-left app-sidenav md-whiteframe-4dp">
+        <md-list ng-click="UserController.toggleList()">
+            <md-list-item ng-repeat="user in UserController.users">
+                <md-button ng-click="UserController.selectUser(user)">
+                    <md-icon class="avatar" md-svg-src="{{user.avatar}}"></md-icon>
+                    {{user.name}}
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+
+    <md-content id="content" class="app-content"
+                flex>
+        <md-icon class="avatar" md-svg-src="{{UserController.selected.avatar}}"></md-icon>
+        <h2>{{UserController.selected.name}}</h2>
+        <p>{{UserController.selected.content}}</p>
+
+        <md-button  class="share" aria-label="Share with {{UserController.selected.name}}"
+                    md-no-ink
+                    ng-click="UserController.makeContact(UserController.selected)">
+            <md-icon md-svg-src="share"></md-icon>
+        </md-button>
+    </md-content>
+</div>
+
+
+<script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/angular-animate/angular-animate.js"></script>
+<script src="../node_modules/angular-aria/angular-aria.js"></script>
+<script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
+
+<script src="app/components/users/Users.js"></script>
+<script src="app/components/users/UserController.js"></script>
+<script src="app/components/users/UserService.js"></script>
+
+<script src="app/app.module.js"></script>
+</body>
+</html>
