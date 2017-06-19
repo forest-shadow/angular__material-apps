@@ -15,11 +15,17 @@
     <h1 class="md-display-2">Device Showcase</h1>
 </md-toolbar>
 <md-content ng-controller="ShowcaseController">
-    <md-radio-group>
+    <md-radio-group class="showcaseControls" ng-model="data.mode">
 
-        <md-radio-button ng-repeat="showcaseMode in showcaseModes" value="{{showcaseMode.value}}" class="md-primary" >{{showcaseMode.label}}</md-radio-button>
+        <md-radio-button ng-repeat="showcaseMode in showcaseModes"
+                         value="{{showcaseMode.value}}"
+                         class="md-primary" >
+            {{showcaseMode.label}}
+        </md-radio-button>
 
     </md-radio-group>
+
+    <div ng-include="setFile()"></div>
 </md-content>
 
 <script src="../node_modules/angular/angular.js"></script>

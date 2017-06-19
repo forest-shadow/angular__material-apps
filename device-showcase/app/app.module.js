@@ -47,10 +47,10 @@
 
         $scope.data = {};
         $scope.setFile = function () {
-            if($scope.data.mode === 'Tablets')
-                return 'tabletsList.html';
-            else if($scope.data.mode === 'Phones')
-                return 'phonesList.html';
+            if($scope.data.mode === 'tablets')
+                return 'templates/tabletsList.html';
+            else if($scope.data.mode === 'phones')
+                return 'templates/phonesList.html';
         };
 
     });
