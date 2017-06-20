@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" ng-app="askQuestion">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ask question app</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<md-toolbar class="top-bar">
+    <h1 class="md-display-2">Ask question app</h1>
+</md-toolbar>
+<md-content ng-controller="askQuestionController"
+            ng-class="questColorClass" ng-mouseenter="changeClass($event)" ng-mouseleave="changeClass($event)"
+>
+    <section class="question">
+        <div class="question__text">{{question.text}}</div>
+        <p class="question__author">{{question.author}}</p>
+        <p class="question__date">{{question.date}}</p>
+    </section>
+
+    <section class="answers">
+        <h3>Ответы</h3>
+
+        <div ng-repeat="answer in question.answers | orderBy:'-rate'" class="answer">
+            <div class="vote">
+                <a class="vote__vote-up" ng-click="voteUp(answer)">
+                    <i class="material-icons">keyboard_arrow_up</i>
+                </a>
+                <span class="rate">{{answer.rate}}</span>
+                <a class="vote__vote-down" ng-click="voteDown(answer)">
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </a>
+            </div>
+            <b>{{answer.text}}</b>
+            <p>{{answer.author}}</p>
+            <p><i>{{answer.date}}</i></p>
+        </div>
+    </section>
+</md-content>
+
+<md-content>
+    <div ng-controller="askQuestionController">
+        <select ng-model="answer.author">
+            <option ng-repeat="answer in question.answers" >{{answer.author}}</option>
+        </select>
+        <select>
+            <option ng-repeat="selected_answer in question.answers | filter:answer">{{selected_answer.date}}</option>
+        </select>
+    </div>
+</md-content>
+
+<md-content ng-controller="askQuestionController" ng-class="questColorClass">
+    <div class="quest">
+        <h3>{{question.text}}</h3>
+        <p>{{question.author}}</p>
+        <p><i>{{question.date}}</i></p>
+    </div>
+    <p>Введите ответчика: <input type="text" ng-model="member"></p>
+    <h3>Ответы</h3>
+    <div class="answers">
+        <div ng-repeat="a in question.answers | filter:{author:member}" class="answer" >
+            <div class="vote">
+                <a class="vote-up" ng-click="voteUp(a)">
+                    <i class="material-icons">keyboard_arrow_up</i>
+                </a>
+                <span class="rate">{{a.rate}}</span>
+                <a class="vote-down" ng-click="voteDown(a)">
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </a>
+            </div>
+            <b>{{a.text}}</b>
+            <p>{{a.author}}</p>
+            <p><i>{{a.date}}</i></p>
+        </div>
+    </div>
+</md-content>
+
+<script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/angular-animate/angular-animate.js"></script>
+<script src="../node_modules/angular-aria/angular-aria.js"></script>
+<script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
+
+<script src="app/app.module.js"></script>
+</body>
+</html>
