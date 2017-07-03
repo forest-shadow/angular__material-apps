@@ -61,8 +61,8 @@
         <p>{{question.author}}</p>
         <p><i>{{question.date}}</i></p>
     </div>
-    <p>Введите ответчика: <input type="text" ng-model="member"></p>
-    <h3>Ответы</h3>
+    <p>Choose responder: <input type="text" ng-model="member"></p>
+    <h3>Answers:</h3>
     <div class="answers">
         <div ng-repeat="a in question.answers | filter:{author:member}" class="answer" >
             <div class="vote">
@@ -79,6 +79,23 @@
             <p><i>{{a.date}}</i></p>
         </div>
     </div>
+
+    <form   ng-controller="AnswerFormController as AnswerFormCtrl"
+            name="answerForm">
+        <md-input-container>
+            <input id="answerText" required placeholder="Enter your answer"
+                   ng-model="answer.text">
+        </md-input-container>
+        <md-input-container>
+            <input  id="answerAuthor" required placeholder="Enter answer authors name"
+                    ng-model="answer.author">
+        </md-input-container>
+        <md-input-container>
+            <input  id="answerDate" required placeholder="Enter answer date"
+                    ng-model="answer.date" ng-pattern="/\d\d/\d\d/\d\d\d\d/">
+        </md-input-container>
+        <md-button class="md-raised md-primary" type="submit" ng-click="save(answer, answerForm)">Save</md-button>
+    </form>
 </md-content>
 
 <script src="../node_modules/angular/angular.js"></script>
@@ -87,5 +104,6 @@
 <script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
 
 <script src="app/app.module.js"></script>
+<script src="app/answer-form.controller.js"></script>
 </body>
 </html>
