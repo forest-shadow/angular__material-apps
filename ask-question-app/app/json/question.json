@@ -1,19 +1,27 @@
 {
-  "question":{
-    "text": "Какой js-фреймворк лучше использовать?",
-    "author": "Иван Иванов",
+  "question": {
+    "text": "Which js-framework is better to use?",
+    "author": "John Johns",
     "date": "20/10/2013",
-    "answers":
-    [{
-      "text": "AngularJS!",
-      "author": "Вова Сидоров",
-      "date": "20/10/2013",
-      "rate":2
-    },{
-      "text": "AngularJS лучше всех",
-      "author": "Олег Кузнецов",
-      "date": "21/10/2013",
-      "rate":3
-    }]
+    "answers": [
+      {
+        "text": "AngularJS!",
+        "author": "Peter Smith",
+        "date": "20/10/2013",
+        "rate": 2
+      },
+      {
+        "text": "AngularJS better than all",
+        "author": "David Flanigan",
+        "date": "15/10/2013",
+        "rate": 0
+      },
+      {
+        "text": "I want to use knockout",
+        "author": "Unknown",
+        "date": "10/10/2013",
+        "rate": 3
+      }
+    ]
   }
 }
