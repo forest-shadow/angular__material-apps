@@ -13,6 +13,5 @@
             templateUrl: "./app/templates/answer-list.directive.html"
         }
 
-
     } );
 })();
