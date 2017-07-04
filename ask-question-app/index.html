@@ -15,7 +15,7 @@
 <md-toolbar class="top-bar">
     <h1 class="md-display-2">Ask question app</h1>
 </md-toolbar>
-<md-content ng-controller="askQuestionController"
+<md-content ng-controller="AskQuestionController"
             ng-class="questColorClass" ng-mouseenter="changeClass($event)" ng-mouseleave="changeClass($event)"
 >
     <section class="question">
@@ -45,7 +45,7 @@
 </md-content>
 
 <md-content>
-    <div ng-controller="askQuestionController">
+    <div ng-controller="AskQuestionController">
         <select ng-model="answer.author">
             <option ng-repeat="answer in question.answers" >{{answer.author}}</option>
         </select>
@@ -55,7 +55,7 @@
     </div>
 </md-content>
 
-<md-content ng-controller="askQuestionController" ng-class="questColorClass">
+<md-content ng-controller="AskQuestionController" ng-class="questColorClass">
     <div class="quest">
         <h3>{{question.text}}</h3>
         <p>{{question.author}}</p>
@@ -104,6 +104,7 @@
 <script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
 
 <script src="app/app.module.js"></script>
-<script src="app/answer-form.controller.js"></script>
+<script src="app/controllers/answer-form.controller.js"></script>
+<script src="app/controllers/ask-question.controller.js"></script>
 </body>
 </html>

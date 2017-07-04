@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" ng-app="askQuestion">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ask question app</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<md-toolbar class="top-bar">
+    <h1 class="md-display-2">Ask question app</h1>
+</md-toolbar>
+<md-content ng-controller="AskQuestionController"
+            ng-class="questColorClass" ng-mouseenter="changeClass($event)" ng-mouseleave="changeClass($event)"
+>
+    <section class="question">
+        <div class="question__text">{{question.text}}</div>
+        <p class="question__author">{{question.author}}</p>
+        <p class="question__date">{{question.date}}</p>
+    </section>
+
+    <section class="answers">
+        <h3>Answers:</h3>
+        <div answer-list="question"></div>
+    </section>
+</md-content>
+
+<script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/angular-animate/angular-animate.js"></script>
+<script src="../node_modules/angular-aria/angular-aria.js"></script>
+<script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
+
+<script src="app/app.module.js"></script>
+<script src="app/controllers/answer-form.controller.js"></script>
+<script src="app/controllers/ask-question.controller.js"></script>
+<script src="app/directives/answer-list.directive.js"></script>
+</body>
+</html>

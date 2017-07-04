@@ -1,9 +1,9 @@
 'use strict';
 
 (function(){
-    let app = angular.module( 'askQuestion', ['ngMaterial'] );
+    let app = angular.module( 'askQuestion' );
 
-    app.controller( 'AskQuestionController', function( $scope ) {
+    app.controller( 'AskQuestionController', ['$scope', function AskQuestionController( $scope ) {
         $scope.question = {
             text:   'Which js-framework is better to use?',
             author: 'John Johns',
@@ -43,5 +43,5 @@
         $scope.changeClass = function (e) {
             $scope.questColorClass = e.type === "mouseover" ? "questselectedcolor" : "questcolor";
         };
-    } );
+    } ] );
 })();
