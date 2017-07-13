@@ -1,0 +1,157 @@
+/******************
+* Components
+*******************/
+
+/******************
+* Table
+*******************/
+table {
+    border-collapse: collapse;
+    margin: .75em 0;
+    table-layout: fixed;
+    width: 100%
+}
+
+th {
+    border-bottom: 1px solid #b7b7b7;
+    font-weight: bold;
+    padding: .75em 0;
+    text-align: left
+}
+
+td {
+    border-bottom: 1px solid #DDD;
+    padding: .75em 0
+}
+
+tr,td,th {
+    vertical-align: middle
+}
+
+
+
+/******************
+* Top bar
+*******************/
+.top-bar {
+    padding: 2rem;
+}
+    .top-bar h1 {
+        margin: 0;
+    }
+
+
+/******************
+* Content
+*******************/
+md-content {
+    padding: 2rem;
+}
+
+/******************
+* Navigation
+*******************/
+nav.app__navigation {
+    background: #DDD;
+}
+    nav.app__navigation md-content._md {
+        background: #DDD;
+    }
+
+    nav.app__navigation a {
+        margin-right: 14px;
+        padding-right: 14px;
+        display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+        text-decoration: none;
+    }  
+    
+    nav.app__navigation a:hover {
+        text-decoration: underline;
+    }
+
+/******************
+* Purchases filter
+*******************/
+form.purchases-adding {
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+    form.purchases-adding .purchases-adding__filter-container .purchases-adding__add-item{
+        margin-top: 14px;
+        width: 100%;
+        text-align: center;
+    }
+
+
+
+.showcaseControls {
+    display: block;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+/******************
+* Question
+*******************/
+.question {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 10px;
+}
+
+.question__text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.question__author {
+    font-weight: bold;
+}
+
+.question__date {
+    font-style: italic;
+}
+
+
+.questcolor {
+    background: #F6F6F6;
+}
+.questselectedcolor{
+    background: #ddd;
+}
+.answer {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+.vote {
+    float: left;
+    text-align: center;
+    width: 21px;
+    margin-right: 20px;
+}
+.vote .vote__vote-up,
+.vote .vote__vote-down {
+    display: block;
+    margin: 0 auto;
+    width: 21px;
+    height: 25px;
+}
+.vote .vote__vote-up:hover,
+.vote .vote__vote-down:hover {
+    cursor: pointer;
+}
+
+
+/******************
+* Forms
+*******************/
+form#answerForm label {
+    width: 140px;
+    display: inline-block;
+}
+
+form#answerForm fieldset {
+    margin-bottom: 14px;
+}

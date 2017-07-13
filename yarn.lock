@@ -52,6 +52,14 @@ angular-material@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/angular-material/-/angular-material-1.1.4.tgz#27de35646f54ccd320080af0c708e1b438af87f6"
 
+angular-route@^1.6.5:
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/angular-route/-/angular-route-1.6.5.tgz#af45593299f55874d0261018adb11520a3817d2a"
+
+angular-router@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/angular-router/-/angular-router-0.0.2.tgz#50ddd91f43edda87da8335acb21d438a782e22fc"
+
 angular@^1.6.4:
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.4.tgz#03b7b15c01a0802d7e2cf593240e604054dc77fb"
@@ -2627,10 +2635,6 @@ tough-cookie@~2.3.0:
   resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-2.3.2.tgz#f081f76e4c85720e6c37a5faced737150d84072a"
   dependencies:
     punycode "^1.4.1"
-
-tsc@^1.20150623.0:
-  version "1.20150623.0+f2044a901165a2a97813772353b57dd9ed4796ca"
-  resolved "https://registry.yarnpkg.com/tsc/-/tsc-1.20150623.0.tgz#4ebc3c774e169148cbc768a7342533f082c7a6e5"
 
 tunnel-agent@^0.6.0:
   version "0.6.0"
